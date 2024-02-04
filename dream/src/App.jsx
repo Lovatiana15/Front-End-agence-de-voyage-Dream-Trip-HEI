@@ -1,15 +1,10 @@
 import React from 'react';
-import Switch from '@mui/material/Switch';
-
-const label = { inputProps: { 'aria-label': 'Switch demo' } };
+import NavMenu from './components/navbar/NavMenu';
 
 function App() {
     return (
         <div>
-            <Switch {...label} defaultChecked />
-            <Switch {...label} />
-            <Switch {...label} disabled defaultChecked />
-            <Switch {...label} disabled />
+            <NavMenu/>
         </div>
     );
 }
