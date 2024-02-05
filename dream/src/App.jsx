@@ -1,12 +1,12 @@
 import React from 'react';
+import NavMenu from './components/navbar/NavMenu';
 
 function App() {
     return (
         <>
-            hello world
+            <NavMenu />
         </>
     );
 }
 
 export default App;
-
