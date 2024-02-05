@@ -6,10 +6,12 @@ import {
     FormControl,
     Box
 } from '@mui/material';
-import { MoodOutlined } from '@mui/icons-material';
-import { Link } from 'react-router-dom';
 
-function login() {
+function Login({ handleSignupModalOpen, handleLoginModalClose }) {
+    const handleLinkClick = () => {
+        handleSignupModalOpen();
+        handleLoginModalClose();
+    };
     return (
         <div>
             <Grid >
@@ -22,8 +24,7 @@ function login() {
                     alignItems: 'center',
                 }}>
                     <div style={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
-                        <p style={{ color:'orange', fontSize:'25px'}}>Login</p>
-                        <MoodOutlined color='primary' />
+                        <p style={{ color:'orange', fontSize:'30px'}}>Login</p>
                     </div>
                     <FormControl component='form' >
                         <TextField
@@ -33,7 +34,21 @@ function login() {
                             variant='outlined'
                             id='email'
                             label='Email'
-                            sx={{ color: 'orange', mb: 2 }}
+                            sx={{
+                                '&:hover .MuiOutlinedInput-notchedOutline': {
+                                    borderColor: 'orange',
+                                },
+                                '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                                    borderColor: 'orange',
+                                },
+                                '& .MuiInputLabel-root': {
+                                    color: 'white',
+                                },
+                                '& .MuiOutlinedInput-input': {
+                                    color: 'white',
+                                },
+                                mb:2
+                            }}
                         />
                         <TextField
                             size='small'
@@ -42,26 +57,54 @@ function login() {
                             variant='outlined'
                             id='password'
                             label='Password'
-                            sx={{ color: 'orange', mb: 2 }}
+                            sx={{
+                                '&:hover .MuiOutlinedInput-notchedOutline': {
+                                    borderColor: 'orange',
+                                },
+                                '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                                    borderColor: 'orange',
+                                },
+                                '& .MuiInputLabel-root': {
+                                    color: 'white',
+                                },
+                                '& .MuiOutlinedInput-input': {
+                                    color: 'white',
+                                },
+                                mb:2
+                            }}
                         />
                         <TextField
                             size='small'
                             name='Key'
                             variant='outlined'
                             label='Key-admin'
-                            sx={{ color: 'orange', mb: 2 }}
+                            sx={{
+                                '&:hover .MuiOutlinedInput-notchedOutline': {
+                                    borderColor: 'orange',
+                                },
+                                '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                                    borderColor: 'orange',
+                                },
+                                '& .MuiInputLabel-root': {
+                                    color: 'white',
+                                },
+                                '& .MuiOutlinedInput-input': {
+                                    color: 'white',
+                                },
+                                mb:2
+                            }}
                         />
                         <Button
                             type="submit"
                             fullWidth
                             variant="contained"
-                            sx={{ color: 'white' }}
+                            style={{ backgroundColor: 'green', color: 'white' }}
                         >
                             Login
                         </Button>
                     </FormControl>
-                    <p className='text-blue-500 hover:underline mt-3'>
-                        <Link to={'/login/registration'}>I dont have an account</Link>
+                    <p className='text-white underline mt-3'>
+                        <span  onClick={handleLinkClick}>I dont have an account</span>
                     </p>
                 </Box>
             </Grid>
@@ -69,4 +112,4 @@ function login() {
     );
 }
 
-export default login;
+export default Login;
