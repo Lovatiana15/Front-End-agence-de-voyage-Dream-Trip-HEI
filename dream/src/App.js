@@ -1,6 +1,12 @@
+import React from 'react';
 
 function App() {
- //dream trip
+    return (
+        <>
+            hello world
+        </>
+    );
 }
 
 export default App;
+
