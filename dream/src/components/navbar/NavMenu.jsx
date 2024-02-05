@@ -5,6 +5,8 @@ import HomeBar from './HomeBar';
 import ServiceBar from './ServiceBar';
 import AboutUsBar from './AboutUsBar';
 import ContactUsBar from './ContactUsBar';
+import Login from '../../pages/login/login';
+import Signup from '../../pages/login/signup';
 
 
 const Navbar = () => {
@@ -12,14 +14,15 @@ const Navbar = () => {
         <AppBar  >
             <Toolbar sx={{ backgroundColor: 'rgb(206, 141, 20)', display: 'flex', justifyContent: 'space-between' }} >
                 <Avatar alt="" src={Img1} />
-                <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap:10 }}>
+                <div style={{ display: 'flex', flexDirection: 'row', gap:10 }}>
                     <HomeBar />
                     <ServiceBar />
                     <AboutUsBar />
                     <ContactUsBar />
                 </div>
-                <div>
-                    {/**button sign up, login */}
+                <div style={{ display: 'flex', flexDirection: 'row', gap:10 }}>
+                    <Login/>
+                    <Signup/>
                 </div>
             </Toolbar>
         </AppBar>
