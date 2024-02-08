@@ -1,44 +1,45 @@
-import React, { useState } from 'react';
-import axios from 'axios'; 
-import { useNavigate } from 'react-router-dom';
 import {
-    TextField,
-    Grid,
+    Alert,
+    Box,
     Button,
     FormControl,
-    Box,
+    Grid,
     Snackbar,
-    Alert
+    TextField
 } from '@mui/material';
+import axios from 'axios';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Signup({ handleLoginModalOpen, handleSignupModalClose }) {
     const handleLinkClick = () => {
         handleLoginModalOpen();
         handleSignupModalClose();
     };
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
+    const [username, setUsername] = useState('');
+    const [userLastName, setUserLastName] = useState('');
     const [email, setEmail] = useState('');
-    const [address, setAddress] = useState('');
-    const [phone, setPhone] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
     const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
+    const [address, setAddress] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
     const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
         const userData = {
-            firstName,
-            lastName,
+            username,
+            userLastName,
             email,
-            address,
-            phone,
+            phoneNumber,
             password,
-            confirmPassword
+
+            address
+
+
         };
 
-        axios.post('/api/signup', userData) //ty le endpoint le back tokony andefasana le save
+        axios.post('http://localhost:8080/api/v1/user/save', userData) //ty le endpoint le back tokony andefasana le save
             .then(() => {
                 navigate('/home'); //ty le endpoint le page apres le s'inscrire
                 setSuccessMessage('Inscription réussie !');
@@ -67,13 +68,13 @@ function Signup({ handleLoginModalOpen, handleSignupModalClose }) {
                         <div style={{ display: 'flex', flexDirection: 'row', gap: 6 }}>
                             <TextField
                                 size='small'
-                                name='First-name'
+                                name='username'
                                 type='text'
                                 variant='outlined'
-                                id='First-name'
-                                label='First name'
-                                value={firstName}
-                                onChange={e => setFirstName(e.target.value)}
+                                id='username'
+                                label='user name'
+                                value={username}
+                                onChange={e => setUsername(e.target.value)}
                                 sx={{
                                     '&:hover .MuiOutlinedInput-notchedOutline': {
                                         borderColor: 'orange',
@@ -92,13 +93,13 @@ function Signup({ handleLoginModalOpen, handleSignupModalClose }) {
                             />
                             <TextField
                                 size='small'
-                                name='LastName'
+                                name='userLastName'
                                 type='text'
                                 variant='outlined'
-                                id='LastName'
-                                label='Last name'
-                                value={lastName}
-                                onChange={e => setLastName(e.target.value)}
+                                id='userLastName'
+                                label='userLastName'
+                                value={userLastName}
+                                onChange={e => setUserLastName(e.target.value)}
                                 sx={{
                                     '&:hover .MuiOutlinedInput-notchedOutline': {
                                         borderColor: 'orange',
@@ -150,7 +151,7 @@ function Signup({ handleLoginModalOpen, handleSignupModalClose }) {
                                 id='Address'
                                 label='Address'
                                 value={address} // Assurez-vous que le nom de la variable est 'address'
-                                onChange={e => setAddress(e.target.value)} 
+                                onChange={e => setAddress(e.target.value)}
                                 sx={{
                                     '&:hover .MuiOutlinedInput-notchedOutline': {
                                         borderColor: 'orange',
@@ -176,8 +177,8 @@ function Signup({ handleLoginModalOpen, handleSignupModalClose }) {
                             variant='outlined'
                             id='Phone'
                             label='Phone number'
-                            value={phone}
-                            onChange={e => setPhone(e.target.value)}
+                            value={phoneNumber}
+                            onChange={e => setPhoneNumber(e.target.value)}
                             sx={{
                                 '&:hover .MuiOutlinedInput-notchedOutline': {
                                     borderColor: 'orange',
@@ -219,30 +220,7 @@ function Signup({ handleLoginModalOpen, handleSignupModalClose }) {
                                 mb: 2
                             }}
                         />
-                        <TextField
-                            size='small'
-                            name='Key'
-                            type='password'
-                            variant='outlined'
-                            label='Confirm password'
-                            value={confirmPassword}
-                            onChange={e => setConfirmPassword(e.target.value)}
-                            sx={{
-                                '&:hover .MuiOutlinedInput-notchedOutline': {
-                                    borderColor: 'orange',
-                                },
-                                '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                                    borderColor: 'orange',
-                                },
-                                '& .MuiInputLabel-root': {
-                                    color: 'white',
-                                },
-                                '& .MuiOutlinedInput-input': {
-                                    color: 'white',
-                                },
-                                mb: 2
-                            }}
-                        />
+
                         <Button
                             type="submit"
                             fullWidth

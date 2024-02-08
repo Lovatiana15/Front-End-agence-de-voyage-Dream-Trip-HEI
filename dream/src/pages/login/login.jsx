@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 import {
-    TextField,
-    Grid,
+    Alert,
+    Box,
     Button,
     FormControl,
-    Box,
+    Grid,
     Snackbar,
-    Alert
+    TextField
 } from '@mui/material';
+import axios from 'axios';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Login({ handleSignupModalOpen, handleLoginModalClose }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [keyAdmin, setKeyAdmin] = useState('');
-    const [successMessage, setSuccessMessage] = useState('');
+    const [adminKey, setAdminKey] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
 
     const handleLinkClick = () => {
@@ -27,23 +27,26 @@ function Login({ handleSignupModalOpen, handleLoginModalClose }) {
         const userCredentials = {
             email,
             password,
-            keyAdmin
+            key: adminKey
         };
 
-        axios.post('/api/signup', userCredentials) //ty le endpoint le back tokony andefasana le save
-            .then(() => {
-                navigate('/home'); //ty le endpoint le page apres le s'inscrire
-                setSuccessMessage('Inscription réussie !');
+        axios.post('http://localhost:8080/api/v1/user/login', userCredentials)
+            .then(response => {
+                if (response.status === 200 && response.data.status) {
+                    navigate('/home');
+                } else {
+                    setErrorMessage('Email, mot de passe ou clé d\'administrateur incorrecte.');
+                }
             })
             .catch(error => {
                 console.error(error);
-                setSuccessMessage('Une erreur est survenue lors de l\'inscription.');
+                setErrorMessage('Une erreur est survenue lors de la connexion.');
             });
     };
 
     return (
         <div>
-            <Grid >
+            <Grid>
                 <Box sx={{
                     py: 3,
                     px: 4,
@@ -111,8 +114,8 @@ function Login({ handleSignupModalOpen, handleLoginModalClose }) {
                             name='Key'
                             variant='outlined'
                             label='Key-admin'
-                            value={keyAdmin}
-                            onChange={e => setKeyAdmin(e.target.value)}
+                            value={adminKey}
+                            onChange={e => setAdminKey(e.target.value)}
                             sx={{
                                 '&:hover .MuiOutlinedInput-notchedOutline': {
                                     borderColor: 'orange',
@@ -138,11 +141,13 @@ function Login({ handleSignupModalOpen, handleLoginModalClose }) {
                             Login
                         </Button>
                     </FormControl>
-                    <Snackbar open={!!successMessage} autoHideDuration={6000} onClose={() => setSuccessMessage('')}>
-                        <Alert onClose={() => setSuccessMessage('')} severity="success">
-                            {successMessage}
-                        </Alert>
-                    </Snackbar>
+                    {errorMessage && (
+                        <Snackbar open={true} autoHideDuration={6000} onClose={() => setErrorMessage('')}>
+                            <Alert onClose={() => setErrorMessage('')} severity="error">
+                                {errorMessage}
+                            </Alert>
+                        </Snackbar>
+                    )}
                     <p className='text-white underline mt-3'>
                         <span onClick={handleLinkClick}>I dont have an account</span>
                     </p>
