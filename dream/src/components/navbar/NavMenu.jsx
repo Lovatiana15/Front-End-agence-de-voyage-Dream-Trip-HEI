@@ -45,7 +45,16 @@ function Navbar() {
             </Toolbar>
             {/* Modal de connexion */}
             <Modal open={loginModalOpen} onClose={handleLoginModalClose}>
-                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '110vh' }}>
+                <Box
+                    sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        height: '110vh',
+                        backdropFilter: 'blur(3px)',
+                        backgroundColor: 'rgba(255, 255, 255, 0.3)',
+                        zIndex: 9999,
+                    }}>
                     <Paper elevation={2} sx={{ position: 'relative', p: 3, backgroundColor: 'rgba(0, 0, 0, 0.6)' }}>
                         <Button onClick={handleLoginModalClose} style={{ position: 'absolute', top: 4, right: 4, fontSize: '25px', color: 'white' }}>
                             x
@@ -57,7 +66,16 @@ function Navbar() {
 
             {/* Modal d'inscription */}
             <Modal open={signupModalOpen} onClose={handleSignupModalClose}>
-                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
+                <Box
+                    sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        height: '100vh',
+                        backdropFilter: 'blur(3px)',
+                        backgroundColor: 'rgba(255, 255, 255, 0.3)',
+                        zIndex: 9999,
+                    }}>
                     <Paper elevation={3} sx={{ position: 'relative', p: 3, backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
                         <Button onClick={handleSignupModalClose} style={{ position: 'absolute', top: 4, right: 4, fontSize: '25px', color: 'white' }}>
                             x

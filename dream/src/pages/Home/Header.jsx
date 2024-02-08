@@ -3,6 +3,7 @@ import Carousel from 'react-material-ui-carousel';
 import { Box, Typography, Button, Link as MuiLink } from '@mui/material';
 import { css } from '@emotion/react';
 import { Link } from 'react-router-dom';
+import SearchSection from '../search/SearchSection';
 import img from '../../assets/dream.jpg';
 import img2 from '../../assets/image1.jpg';
 import img3 from '../../assets/image2.jpg';
@@ -11,74 +12,74 @@ const carouselImages = [
     {
         id: 1,
         imageUrl: img,
-        title: { h1: 'Bienvenue chez', span: ' Dream-trip' },
-        subtitle: 'Vous verrez ici tous vos voyage que préférés',
-        button: 'Rechercher',
+        title: { h1: 'Welcome to Dream Trip', span: ' Dream-trip' },
+        subtitle: 'Here you will find all your travel plans for tomorrow',
+        button: 'Search',
         link: '/search'
     },
     {
         id: 2,
         imageUrl: img2,
-        title: { h1: 'Devenez un membre', span: ' Fidèle' },
-        subtitle: 'Inscrivez-vous maintenant et recevez des réductions de prix',
-        button: 'S inscrire',
+        title: { h1: 'Become a member', span: 'loyal' },
+        subtitle: 'Register now and receive price reductions',
+        button: 'Register',
         link: '/signup'
     },
     {
         id: 3,
         imageUrl: img3,
-        title: { h1: 'Visiter nos destination par', span: ' Catégories' },
-        subtitle: 'Sélection exquise de vos voyage de reve',
-        button: 'Contacter',
+        title: { h1: 'Visit our destinations by', span: ' Category' },
+        subtitle: 'Exquisite selection of your dream trips',
+        button: 'Contact us',
         link: '/contact'
     }
 ];
 
 const headerStyle = css`
-  width:  100%;
-  height:  75vh;
-  margin-top: 10vh;
+width:  100%;
+height:  75vh;
+margin-top: 10vh;
 `;
 
 const slideStyle = css`
-  width:  100%;
-  height:  75vh;
-  background-size: cover;
-  position: relative;
+width:  100%;
+height:  75vh;
+background-size: cover;
+position: relative;
 `;
 
 const textContainerStyle = css`
-  width:  100%;
-  height:  75vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0,  0,  0,  0.5); // Adjust opacity and color as needed
+width:  100%;
+height:  75vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background: rgba(0,  0,  0,  0.5); // Adjust opacity and color as needed
 `;
 
 const titleStyle = css`
-  font-size:  35px;
-  margin:  0;
-  color: white;
-  font-weight: bold;
+font-size:  35px;
+margin:  0;
+color: white;
+font-weight: bold;
 `;
 
 const subtitleStyle = css`
-  font-size:  25px;
-  margin:  0;
+font-size:  25px;
+margin:  0;
   color: #ccc; // Adjust color as needed
-  text-align: center;
+text-align: center;
 `;
 
 const buttonStyle = css`
-  padding:  5px  10px;
-  border-radius:  4px;
-  margin-top:  3rem;
-  color: white;
-  font-weight: bold;
-  font-size:  18px;
-  background-color: #ff9800; // Adjust color as needed
+padding:  5px  10px;
+border-radius:  4px;
+margin-top:  3rem;
+color: white;
+font-weight: bold;
+font-size:  18px;
+background-color: #ff9800;
 `;
 
 function Header() {
@@ -102,6 +103,7 @@ function Header() {
                     </Box>
                 ))}
             </Carousel>
+            <SearchSection/>
         </Box>
     );
 }

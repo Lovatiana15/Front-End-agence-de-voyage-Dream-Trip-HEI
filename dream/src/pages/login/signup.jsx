@@ -220,7 +220,6 @@ function Signup({ handleLoginModalOpen, handleSignupModalClose }) {
                                 mb: 2
                             }}
                         />
-
                         <Button
                             type="submit"
                             fullWidth
@@ -235,8 +234,8 @@ function Signup({ handleLoginModalOpen, handleSignupModalClose }) {
                             {successMessage}
                         </Alert>
                     </Snackbar>
-                    <p className='text-white underline mt-3'>
-                        <span onClick={handleLinkClick}>I have an account</span>
+                    <p className='text-green underline mt-3'>
+                        <span onClick={handleLinkClick} className='text-orange'>I have an account</span>
                     </p>
                 </Box>
             </Grid>
