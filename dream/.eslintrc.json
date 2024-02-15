@@ -11,7 +11,7 @@
     "plugins": ["react"],
     "rules": {
       "indent": ["error", 4],
-      "linebreak-style": ["error", "unix"],
+      "linebreak-style": "off",
       "quotes": ["error", "single"],
       "semi": ["error", "always"],
       "react/prop-types": 0
