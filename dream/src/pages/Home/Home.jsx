@@ -5,6 +5,7 @@ import Divider from '@mui/material/Divider';
 import Footer from '../Footer/Footer';
 import Testimonials from './Testimonials';
 import Banner from './Banner';
+import Destination from './Destination';
 
 function Home() {
     return (
@@ -13,6 +14,7 @@ function Home() {
             <Header/>
             <Divider/>
             <Banner/>
+            <Destination/>
             <Testimonials/>
             <Footer />
         </div>
