@@ -1,11 +1,5 @@
 import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardContent from '@mui/material/CardContent';
-import Avatar from '@mui/material/Avatar';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
+import { CardHeader, CardContent, Avatar, Typography, Box, Container, Card } from '@mui/material';
 import Masonry from '@mui/lab/Masonry';
 import { useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/system';
@@ -22,42 +16,42 @@ const userTestimonials = [
         name: 'Remy Sharp',
         occupation: 'Senior Engineer',
         testimonial:
-            'I absolutely love how versatile this product is! Whether I m tackling work projects or indulging in my favorite hobbies, it seamlessly adapts to my changing needs. Its intuitive design has truly enhanced my daily routine making tasks more efficient and enjoyable.'
+            'I chose dream-trip for my European adventure and I was absolutely delighted with the experience. The staff were incredibly welcoming and went above and beyond to ensure every detail was perfect. I highly recommend their service to anyone looking for a reliable and quality travel agency'
     },
     {
         avatar: <Avatar alt="Travis Howard" src={img2} />,
         name: 'Travis Howard',
         occupation: 'Lead Product Designer',
         testimonial:
-            'One of the standout features of this product is the exceptional customer support. In my experience, the team behind this product has been quick to respond and incredibly helpful. It s reassuring to know that they stand firmly behind their product, providing the kind of support that enhances the overall user experience and instills confidence in the brand.',
+            'I selected dream-trip for my Caribbean getaway, and it was a dream come true. Their team was incredibly knowledgeable and went out of their way to ensure that my vacation was tailored to my preferences. The itinerary was well-planned, and the local experiences they arranged were truly enriching. I would highly recommend dream-trip to anyone seeking a personalized and memorable travel adventure.',
     },
     {
         avatar: <Avatar alt="Cindy Baker" src={img3} />,
         name: 'Cindy Baker',
         occupation: 'CTO',
         testimonial:
-            'The level of simplicity and user-friendliness in this product has significantly simplified my life. I appreciate the creators for delivering a solution that not only meets but exceeds user expectations.',
+            'I chose dream-trip for my journey to the Pacific and I was impressed by their expertise and dedication. They made my trip not only enjoyable but also educational and culturally enriching. I recommend their agency to anyone looking for an unforgettable travel experience.',
     },
     {
         avatar: <Avatar alt="Remy Sharp" src={img4} />,
         name: 'Julia Stewart',
         occupation: 'Senior Engineer',
         testimonial:
-            'I appreciate the attention to detail in the design of this product. The small touches make a big difference, and it s evident that the creators focused on delivering a premium experience.',
+            'My trip to Africa with dream-trip was a dream. They organized everything impeccably and showed me incredible places I would never have found on my own. I am extremely satisfied with my choice and I will certainly return with them for my future trips.',
     },
     {
         avatar: <Avatar alt="Jeans Boatre" src={img5} />,
         name: 'Jeans Boatre',
         occupation: 'Product Designer',
         testimonial:
-            'I ve tried other similar products, but this one stands out for its innovative features. It s clear that the makers put a lot of thought into creating a solution that truly addresses user needs.',
+            'My journey of discovery in Asia with dream-trip was an incredible adventure. They organized everything from accommodation to food, and every aspect of my trip was exceptional. I can t wait to travel with them again.',
     },
     {
         avatar: <Avatar alt="Cindy Baker" src={img6} />,
         name: 'Daniel Wolf',
         occupation: 'CDO',
         testimonial:
-            'The quality of this product exceeded my expectations. It s durable, well-designed, and built to last. Definitely worth the investment!',
+            'I used dream-trip for my South American adventure and I was surprised by the quality of their service. They made every stage of my trip memorable and showed an attention to detail that is rare to find. I am extremely satisfied with my choice and I will certainly return with them for my future trips.',
     },
 ];
 
@@ -97,14 +91,14 @@ function Testimonials() {
                     pt: { xs: 4, sm: 12 },
                     pb: { xs: 8, sm: 16 },
                     mt: 15,
-                    width:'fullWidth',
+                    width: 'fullWidth',
                     position: 'relative',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
                     gap: { xs: 3, sm: 6 },
-                    backgroundColor:'whitesmoke'
-                    
+                    backgroundColor: 'whitesmoke'
+
                 }}
             >
                 <Box
@@ -124,7 +118,7 @@ function Testimonials() {
                 </Box>
                 <Masonry columns={columns} spacing={2}>
                     {userTestimonials.map((testimonial, index) => (
-                        <Card key={index} sx={{ p: 1 , backgroundColor:'rgb(228, 228, 228)'}}>
+                        <Card key={index} sx={{ p: 1, backgroundColor: 'rgb(228, 228, 228)' }}>
                             <CardContent>
                                 <Typography variant="body2" color="text.secondary">
                                     {testimonial.testimonial}

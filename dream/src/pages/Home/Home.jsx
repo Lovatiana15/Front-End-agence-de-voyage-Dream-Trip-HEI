@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from '../../components/navbar/NavMenu';
 import Header from './Header';
-import Divider from '@mui/material/Divider';
 import Footer from '../Footer/Footer';
 import Testimonials from './Testimonials';
 import Banner from './Banner';
@@ -12,7 +11,6 @@ function Home() {
         <div >
             <Navbar />
             <Header/>
-            <Divider/>
             <Banner/>
             <Destination/>
             <Testimonials/>

@@ -1,8 +1,14 @@
 import React from 'react';
-import { Container, Card, Typography, CardMedia, CardContent, Button } from '@mui/material';
+import { Container, Card, Typography, CardMedia, CardContent, Button, Link } from '@mui/material';
 import img from '../../assets/baner1.jpg';
+import { useNavigate } from 'react-router-dom';
 
 function Banner() {
+    const navigate = useNavigate();
+
+    const handleSignUpClick = () => {
+        navigate('/sign'); // Assurez-vous que '/sign' est la route qui affiche le formulaire d'inscription popup
+    };
     return (
         <Container sx={{ mt: 15, gap: 2, display: 'flex', flexDirection: 'column' }}>
             <Typography component="h2" variant="h4" color="text.primary">
@@ -20,7 +26,9 @@ function Banner() {
                         <Typography variant="body2" color="text.secondary">
                             Browse properties offering long-term stays, many at reduced monthly rates.
                         </Typography>
-                        <Button variant='contained' sx={{ backgroundColor: 'rgb(206, 141, 20)', mt: 1 }}>Sign up</Button>
+                        <Link to="/sign">
+                            <Button variant='contained' onClick={handleSignUpClick} sx={{ backgroundColor: 'rgb(206, 141, 20)', mt: 1 }}>Sign up</Button>
+                        </Link>
                     </CardContent>
                     <CardMedia
                         component="img"
@@ -32,7 +40,7 @@ function Banner() {
                 <Card sx={{
                     display: 'flex'
                 }}>
-                    <CardContent style={{ backgroundImage: `url(${'./Baner2.jpg'})` , color:'white',backgroundSize: 'cover'}}>
+                    <CardContent style={{ backgroundImage: `url(${'./Baner2.jpg'})`, color: 'white', backgroundSize: 'cover' }}>
                         <Typography gutterBottom variant="h5" component="div" >
                             New year, new adventures
                         </Typography>
