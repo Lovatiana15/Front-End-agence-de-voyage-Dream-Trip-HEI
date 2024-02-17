@@ -33,7 +33,7 @@ function Login({ handleSignupModalOpen, handleLoginModalClose }) {
         axios.post('http://localhost:8080/api/v1/user/login', userCredentials)
             .then(response => {
                 if (response.status === 200 && response.data.status) {
-                    navigate('/home');
+                    navigate('/profil');
                 } else {
                     setErrorMessage('Email, mot de passe ou clé d\'administrateur incorrecte.');
                 }

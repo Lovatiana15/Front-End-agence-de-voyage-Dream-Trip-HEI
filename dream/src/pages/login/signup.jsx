@@ -39,9 +39,9 @@ function Signup({ handleLoginModalOpen, handleSignupModalClose }) {
 
         };
 
-        axios.post('http://localhost:8080/api/v1/user/save', userData) //ty le endpoint le back tokony andefasana le save
+        axios.post('http://localhost:8080/api/v1/user/save', userData)
             .then(() => {
-                navigate('/home'); //ty le endpoint le page apres le s'inscrire
+                navigate('/profil'); 
                 setSuccessMessage('Inscription réussie !');
             })
             .catch(error => {
