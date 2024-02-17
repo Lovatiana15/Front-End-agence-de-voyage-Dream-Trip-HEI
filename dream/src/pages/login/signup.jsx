@@ -39,7 +39,7 @@ function Signup({ handleLoginModalOpen, handleSignupModalClose }) {
 
         };
 
-        axios.post('http://localhost:8080/api/v1/user/save', userData) //ty le endpoint le back tokony andefasana le save
+        axios.post('https://backend-production-321f.up.railway.app/api/v1/user/save', userData) //ty le endpoint le back tokony andefasana le save
             .then(() => {
                 navigate('/home'); //ty le endpoint le page apres le s'inscrire
                 setSuccessMessage('Inscription réussie !');
