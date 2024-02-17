@@ -39,9 +39,9 @@ function Signup({ handleLoginModalOpen, handleSignupModalClose }) {
 
         };
 
-        axios.post('https://backend-production-321f.up.railway.app/api/v1/user/save', userData) //ty le endpoint le back tokony andefasana le save
+        axios.post('backend-production-8d00.up.railway.app/api/v1/user/save', userData)
             .then(() => {
-                navigate('/home'); //ty le endpoint le page apres le s'inscrire
+                navigate('/profil'); 
                 setSuccessMessage('Inscription réussie !');
             })
             .catch(error => {
