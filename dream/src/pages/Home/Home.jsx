@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../../components/navbar/NavMenu';
+import Navbar from '../../components/navbar/Navbar';
 import Header from './Header';
 import Footer from '../Footer/Footer';
 import Testimonials from './Testimonials';
