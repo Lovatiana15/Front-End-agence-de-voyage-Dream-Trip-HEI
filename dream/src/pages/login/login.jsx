@@ -30,7 +30,7 @@ function Login({ handleSignupModalOpen, handleLoginModalClose }) {
             key: adminKey
         };
 
-        axios.post('http://localhost:8080/api/v1/user/login', userCredentials)
+        axios.post('https://backend-production-d4e6.up.railway.app/', userCredentials)
             .then(response => {
                 if (response.status === 200 && response.data.status) {
                     navigate('/home');
