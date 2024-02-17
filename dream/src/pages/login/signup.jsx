@@ -39,7 +39,7 @@ function Signup({ handleLoginModalOpen, handleSignupModalClose }) {
 
         };
 
-        axios.post('https://backend-production-321f.up.railway.app/api/v1/user/save', userData)
+        axios.post('https://backend-production-87a6.up.railway.app/api/v1/user/save', userData)
             .then(() => {
                 navigate('/profil'); 
                 setSuccessMessage('Inscription réussie !');
