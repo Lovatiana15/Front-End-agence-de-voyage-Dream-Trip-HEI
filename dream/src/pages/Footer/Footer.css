@@ -1,0 +1,91 @@
+
+.app-container {
+    display: flex;
+    height: 60vh; 
+    margin-top: 20vh;
+    
+  }
+  
+  .left-section, .right-section {
+    flex: 1; 
+    /* border: 1px solid #ccc; */
+    padding: 20px;
+  }
+  
+  .left-section {
+    background-color: #ffd54f;
+  }
+  
+  .right-section {
+    /* background-color: #f0f0f0; */
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffd54f;
+    
+  }
+  .logo00{
+    margin-left: 20%;
+    margin-top: 2%;
+    width: 60%;
+    border-radius: 50%;
+    
+  }
+  .right{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .logopartners{
+   
+  }
+  .logopart{
+    display: flex;
+    justify-content: space-between;
+    margin: 75px;
+  }
+  .logo1{
+    border-radius: 50%;
+    width: 6vw;
+    padding: 20px;
+  }
+  
+
+  /* Styles pour le conteneur principal du footer */
+.footer-container {
+    background-color: #ffd54f; /* Couleur de fond */
+    color:red; /* Couleur du texte */
+    padding: 20px; /* Espacement intérieur */
+    box-shadow: 2px 2px 10px;
+  }
+  
+  /* Styles pour chaque section d'information (adresse, numéro, lieu) */
+  .information-section {
+    margin-bottom: 20px; /* Marge en bas pour séparer les sections */
+  }
+  
+  /* Styles pour les icônes (facultatif, à ajouter si vous utilisez des icônes) */
+  .icon {
+    margin-right: 10px; /* Marge à droite pour séparer l'icône du texte */
+    color: #ffcc00; /* Couleur de l'icône */
+  }
+  
+  /* Styles pour les liens dans le footer */
+  .footer-link {
+    color: red; /* Couleur du lien */
+    text-decoration: none; /* Pas de soulignement */
+  }
+  
+  .footer-link:hover {
+    text-decoration: underline; /* Soulignement au survol du lien */
+  }
+  .social-icons{
+    display: flex;
+    flex-direction: row;
+    padding: 20px 20px;
+    margin: 20px;
+  }
+  .right_logo{
+    
+  }
