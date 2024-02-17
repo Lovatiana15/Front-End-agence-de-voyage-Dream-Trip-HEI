@@ -4,6 +4,7 @@ import Header from './Header';
 import Divider from '@mui/material/Divider';
 import Footer from '../Footer/Footer';
 import Testimonials from './Testimonials';
+import Banner from './Banner';
 
 function Home() {
     return (
@@ -11,6 +12,7 @@ function Home() {
             <Navbar />
             <Header/>
             <Divider/>
+            <Banner/>
             <Testimonials/>
             <Footer />
         </div>
