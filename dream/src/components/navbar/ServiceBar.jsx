@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { styled, alpha } from '@mui/material/styles';
-import Button from '@mui/material/Button';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
+import { Button ,Menu ,MenuItem ,} from '@mui/material';
+import { Link } from 'react-router-dom';
 import HotelIcon from '@mui/icons-material/Hotel';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
@@ -73,7 +72,7 @@ const ServiceBar = () => {
                 disableElevation
                 onClick={handleClick}
                 endIcon={<KeyboardArrowDownIcon />}
-                sx={{ backgroundColor: 'rgb(206, 141, 20)'}}
+                sx={{ backgroundColor: 'rgb(206, 141, 20)' }}
             >
                 Service
             </Button>
@@ -90,10 +89,12 @@ const ServiceBar = () => {
                     <HotelIcon />
                     Hosting
                 </MenuItem>
-                <MenuItem onClick={handleClose} disableRipple>
-                    <DirectionsCarIcon />
-                    Car rental
-                </MenuItem>
+                <Link to='/carRent' style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <MenuItem onClick={handleClose} disableRipple>
+                        <DirectionsCarIcon />
+                        Car rental
+                    </MenuItem>
+                </Link>
                 <MenuItem onClick={handleClose} disableRipple>
                     <FlightTakeoffIcon />
                     Flights
